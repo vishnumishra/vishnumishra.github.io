@@ -147,8 +147,8 @@ a, a:hover { text-decoration: none; }
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-.company-chip { display: inline-flex; align-items: center; justify-content: center; width: 120px; height: 120px; padding: 18px; background: #1e2d40; border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; cursor: pointer; text-decoration: none; transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s, background 0.25s; flex-shrink: 0; }
-.company-chip:hover { background: #243448; border-color: var(--gold); transform: translateY(-6px) scale(1.08); box-shadow: 0 12px 30px rgba(240,192,64,0.22); text-decoration: none; }
+.company-chip { display: inline-flex; align-items: center; justify-content: center; width: 120px; height: 120px; padding: 18px; background: #ffffff; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; cursor: pointer; text-decoration: none; transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s; flex-shrink: 0; }
+.company-chip:hover { border-color: var(--gold); transform: translateY(-6px) scale(1.08); box-shadow: 0 12px 30px rgba(240,192,64,0.3); text-decoration: none; }
 .chip-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--cyan); }
 .chip-logo { width: 100%; height: 100%; object-fit: contain; opacity: 1; filter: none; }
 .chip-logo-invert { filter: brightness(0) invert(1); }
