@@ -147,8 +147,8 @@ a, a:hover { text-decoration: none; }
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-.company-chip { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1.4rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(240,192,64,0.22); border-radius: 50px; white-space: nowrap; color: rgba(255,255,255,0.85); font-size: 0.92rem; font-weight: 600; letter-spacing: 0.02em; cursor: default; transition: background 0.25s, border-color 0.25s, color 0.25s; }
-.company-chip:hover { background: rgba(240,192,64,0.1); border-color: var(--gold); color: var(--gold); }
+.company-chip { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1.4rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(240,192,64,0.22); border-radius: 50px; white-space: nowrap; color: rgba(255,255,255,0.85); font-size: 0.92rem; font-weight: 600; letter-spacing: 0.02em; cursor: pointer; text-decoration: none; transition: background 0.25s, border-color 0.25s, color 0.25s; }
+.company-chip:hover { background: rgba(240,192,64,0.1); border-color: var(--gold); color: var(--gold); text-decoration: none; }
 .chip-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); flex-shrink: 0; }
 .chip-logo { height: 18px; width: auto; max-width: 52px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.8; flex-shrink: 0; transition: opacity 0.25s; }
 .company-chip:hover .chip-logo { opacity: 1; filter: none; }
