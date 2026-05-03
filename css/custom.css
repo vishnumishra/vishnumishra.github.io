@@ -136,7 +136,7 @@ a, a:hover { text-decoration: none; }
 
 /* ===== WORKED WITH MARQUEE ===== */
 .worked-with-section { background: #111827; overflow: hidden; padding-bottom: 60px; }
-.marquee-wrapper { overflow: hidden; width: 100%; margin-top: 2.5rem; position: relative; }
+.marquee-wrapper { overflow-x: clip; overflow-y: visible; width: 100%; margin-top: 2.5rem; padding: 16px 0; position: relative; }
 .marquee-wrapper::before,
 .marquee-wrapper::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none; }
 .marquee-wrapper::before { left: 0; background: linear-gradient(to right, #111827, transparent); }
@@ -147,10 +147,11 @@ a, a:hover { text-decoration: none; }
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-.company-chip { display: inline-flex; align-items: center; justify-content: center; width: 120px; height: 120px; padding: 18px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; cursor: pointer; text-decoration: none; transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s, background 0.25s; flex-shrink: 0; }
-.company-chip:hover { background: rgba(255,255,255,0.09); border-color: var(--gold); transform: translateY(-5px) scale(1.07); box-shadow: 0 10px 28px rgba(240,192,64,0.2); text-decoration: none; }
+.company-chip { display: inline-flex; align-items: center; justify-content: center; width: 120px; height: 120px; padding: 18px; background: #1e2d40; border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; cursor: pointer; text-decoration: none; transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s, background 0.25s; flex-shrink: 0; }
+.company-chip:hover { background: #243448; border-color: var(--gold); transform: translateY(-6px) scale(1.08); box-shadow: 0 12px 30px rgba(240,192,64,0.22); text-decoration: none; }
 .chip-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--cyan); }
 .chip-logo { width: 100%; height: 100%; object-fit: contain; opacity: 1; filter: none; }
+.chip-logo-invert { filter: brightness(0) invert(1); }
 
 /* ===== ALL PROJECTS ===== */
 .mini-project-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 10px; padding: 24px 20px; margin-bottom: 22px; transition: transform 0.2s, border-color 0.2s; height: 100%; }
