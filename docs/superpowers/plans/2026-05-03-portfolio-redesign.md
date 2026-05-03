@@ -1,3 +1,69 @@
+# Portfolio Redesign Implementation Plan
+
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+
+**Goal:** Fully rewrite vishnumishra.github.io into a dark, interactive, AI-forward professional portfolio with lead generation focus.
+
+**Architecture:** Single-page HTML site. Rewrite `index.html` completely. Add `css/custom.css` for all dark-theme styles. Add `js/particles.js` for hero particle canvas. Update `js/index.js` for active-nav scroll tracking. All existing JS/CSS vendor files kept as-is.
+
+**Tech Stack:** HTML5, Bootstrap 4, jQuery, Typed.js, Owl Carousel, AOS (CDN), CSS3 custom properties, Canvas API
+
+---
+
+## Task 1: Setup — new files + CDN links
+
+**Files:**
+- Create: `css/custom.css`
+- Create: `js/particles.js`
+- Modify: `index.html` (head section only — add AOS CDN + custom.css link)
+
+- [ ] **Step 1: Create `css/custom.css` with CSS variable skeleton**
+
+```css
+/* css/custom.css */
+:root {
+  --bg-primary: #0a0e1a;
+  --bg-secondary: #0f2744;
+  --bg-navy: #0f1e38;
+  --gold: #f0c040;
+  --cyan: #00d4ff;
+  --blue-soft: #93c5fd;
+  --text-muted-dark: #94a3b8;
+  --card-bg: rgba(255,255,255,0.04);
+  --card-border: rgba(255,255,255,0.08);
+}
+```
+
+- [ ] **Step 2: Create `js/particles.js` as empty placeholder**
+
+```js
+// js/particles.js — implemented in Task 4
+```
+
+- [ ] **Step 3: Verify files exist**
+
+```bash
+ls css/custom.css js/particles.js
+```
+Expected: both files listed.
+
+- [ ] **Step 4: Commit**
+
+```bash
+git add css/custom.css js/particles.js
+git commit -m "feat: add custom.css and particles.js stubs"
+```
+
+---
+
+## Task 2: Rewrite index.html — complete new structure
+
+**Files:**
+- Modify: `index.html` (full rewrite)
+
+- [ ] **Step 1: Replace entire contents of `index.html`**
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,12 +140,11 @@
             <div class="hero-ctas mt-4">
               <a href="mailto:cybercognizant@gmail.com" class="btn btn-gold">Email Me</a>
               <a href="https://www.linkedin.com/in/cyberbaba/" target="_blank" class="btn btn-outline-cyan ml-3">LinkedIn</a>
-              <a href="vishnu_mishra_resume.pdf" download class="btn btn-outline-gold ml-3">Download Resume</a>
             </div>
           </div>
           <div class="col-lg-5 col-md-4 text-center d-none d-md-block" data-aos="fade-left" data-aos-delay="200">
             <div class="avatar-circle">
-              <img src="images/vishnu.png" alt="Vishnu Mishra" class="avatar-photo">
+              <span>VM</span>
             </div>
           </div>
         </div>
@@ -486,7 +551,7 @@
         <div class="col-lg-12" data-aos="fade-up">
           <div class="text-center text-white section-header">
             <span class="section-label" style="color:var(--gold)">WHAT PEOPLE SAY</span>
-            <h2 style="color:#fff">Client <span style="color:var(--gold)">Testimonials</span></h2>
+            <h2>Client <span style="color:var(--gold)">Testimonials</span></h2>
             <div class="title-divider" style="background:var(--gold)"></div>
           </div>
         </div>
@@ -532,44 +597,34 @@
     </div>
   </section>
 
-  <!-- WORKED WITH -->
-  <section class="section worked-with-section">
+  <!-- TRUSTED BY -->
+  <section class="section navy-section">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-12" data-aos="fade-up">
           <div class="text-center section-header">
-            <span class="section-label">COMPANIES</span>
-            <h2>Worked <span class="text-gold">With</span></h2>
+            <span class="section-label">TRUSTED BY</span>
+            <h2>Great <span class="text-gold">Companies</span></h2>
             <div class="title-divider"></div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="marquee-wrapper" data-aos="fade-up" data-aos-delay="100">
-      <div class="marquee-track">
-        <a class="company-chip" href="https://windward.ai/" target="_blank" rel="noopener noreferrer" title="Windward"><img src="images/clients/windward.svg" alt="Windward" class="chip-logo"></a>
-        <a class="company-chip" href="https://loco.com/" target="_blank" rel="noopener noreferrer" title="Pocket Aces · Loco"><img src="images/clients/loco.png" alt="Loco" class="chip-logo"></a>
-        <a class="company-chip" href="https://www.roadzen.ai/" target="_blank" rel="noopener noreferrer" title="Roadzen"><img src="images/clients/roadzen.png" alt="Roadzen" class="chip-logo"></a>
-        <a class="company-chip" href="https://freeup.net/" target="_blank" rel="noopener noreferrer" title="FreeUp"><img src="images/clients/freeeup.png" alt="FreeUp" class="chip-logo"></a>
-        <a class="company-chip" href="https://www.thoughtworks.com/" target="_blank" rel="noopener noreferrer" title="ThoughtWorks"><img src="images/clients/thoughtworks.svg" alt="ThoughtWorks" class="chip-logo"></a>
-        <a class="company-chip" href="https://www.linkedin.com/company/eqtribe" target="_blank" rel="noopener noreferrer" title="EQTribe"><img src="images/clients/eqtribe.png" alt="EQTribe" class="chip-logo"></a>
-        <a class="company-chip" href="https://www.linkedin.com/company/konixsoft" target="_blank" rel="noopener noreferrer" title="KonixSoft"><img src="images/clients/konixsoft.png" alt="KonixSoft" class="chip-logo"></a>
-        <a class="company-chip" href="https://www.linkedin.com/company/tecsol-software-pvt-ltd/" target="_blank" rel="noopener noreferrer" title="TECSOL"><img src="images/clients/tecsol.png" alt="TECSOL" class="chip-logo"></a>
-        <a class="company-chip" href="https://www.shiftalt.capital/" target="_blank" rel="noopener noreferrer" title="ShiftAlt Capital"><img src="images/clients/shiftalt.jpg" alt="ShiftAlt Capital" class="chip-logo"></a>
-        <a class="company-chip" href="https://hashmeapp.com/" target="_blank" rel="noopener noreferrer" title="HashMe"><img src="images/clients/hashme.png" alt="HashMe" class="chip-logo"></a>
-        <a class="company-chip" href="https://ayodhyadham.info/" target="_blank" rel="noopener noreferrer" title="Ayodhya Dham"><img src="images/clients/ayodhyadham.png" alt="Ayodhya Dham" class="chip-logo"></a>
-        <!-- Duplicate set for seamless infinite scroll -->
-        <a class="company-chip" href="https://windward.ai/" target="_blank" rel="noopener noreferrer" title="Windward"><img src="images/clients/windward.svg" alt="Windward" class="chip-logo"></a>
-        <a class="company-chip" href="https://loco.com/" target="_blank" rel="noopener noreferrer" title="Pocket Aces · Loco"><img src="images/clients/loco.png" alt="Loco" class="chip-logo"></a>
-        <a class="company-chip" href="https://www.roadzen.ai/" target="_blank" rel="noopener noreferrer" title="Roadzen"><img src="images/clients/roadzen.png" alt="Roadzen" class="chip-logo"></a>
-        <a class="company-chip" href="https://freeup.net/" target="_blank" rel="noopener noreferrer" title="FreeUp"><img src="images/clients/freeeup.png" alt="FreeUp" class="chip-logo"></a>
-        <a class="company-chip" href="https://www.thoughtworks.com/" target="_blank" rel="noopener noreferrer" title="ThoughtWorks"><img src="images/clients/thoughtworks.svg" alt="ThoughtWorks" class="chip-logo"></a>
-        <a class="company-chip" href="https://www.linkedin.com/company/eqtribe" target="_blank" rel="noopener noreferrer" title="EQTribe"><img src="images/clients/eqtribe.png" alt="EQTribe" class="chip-logo"></a>
-        <a class="company-chip" href="https://www.linkedin.com/company/konixsoft" target="_blank" rel="noopener noreferrer" title="KonixSoft"><img src="images/clients/konixsoft.png" alt="KonixSoft" class="chip-logo"></a>
-        <a class="company-chip" href="https://www.linkedin.com/company/tecsol-software-pvt-ltd/" target="_blank" rel="noopener noreferrer" title="TECSOL"><img src="images/clients/tecsol.png" alt="TECSOL" class="chip-logo"></a>
-        <a class="company-chip" href="https://www.shiftalt.capital/" target="_blank" rel="noopener noreferrer" title="ShiftAlt Capital"><img src="images/clients/shiftalt.jpg" alt="ShiftAlt Capital" class="chip-logo"></a>
-        <a class="company-chip" href="https://hashmeapp.com/" target="_blank" rel="noopener noreferrer" title="HashMe"><img src="images/clients/hashme.png" alt="HashMe" class="chip-logo"></a>
-        <a class="company-chip" href="https://ayodhyadham.info/" target="_blank" rel="noopener noreferrer" title="Ayodhya Dham"><img src="images/clients/ayodhyadham.png" alt="Ayodhya Dham" class="chip-logo"></a>
+      <div class="row mt-4 pt-2 justify-content-around align-items-center">
+        <div class="col-lg-2 col-md-3 col-4 mt-3 text-center" data-aos="fade-up" data-aos-delay="100">
+          <img src="images/clients/eqtribe.png" alt="EQTribe" class="client-logo img-fluid">
+        </div>
+        <div class="col-lg-2 col-md-3 col-4 mt-3 text-center" data-aos="fade-up" data-aos-delay="200">
+          <img src="images/clients/bicycle_ai.jpg" alt="Bicycle AI" class="client-logo img-fluid">
+        </div>
+        <div class="col-lg-2 col-md-3 col-4 mt-3 text-center" data-aos="fade-up" data-aos-delay="300">
+          <img src="images/clients/sac1.png" alt="SAC" class="client-logo img-fluid">
+        </div>
+        <div class="col-lg-2 col-md-3 col-4 mt-3 text-center" data-aos="fade-up" data-aos-delay="400">
+          <img src="images/clients/freeeup.png" alt="FreeUp" class="client-logo img-fluid">
+        </div>
+        <div class="col-lg-2 col-md-3 col-4 mt-3 text-center" data-aos="fade-up" data-aos-delay="500">
+          <img src="images/clients/grub_club.png" alt="Grub Club" class="client-logo img-fluid">
+        </div>
       </div>
     </div>
   </section>
@@ -720,3 +775,492 @@
   </script>
 </body>
 </html>
+```
+
+- [ ] **Step 2: Open in browser to verify HTML structure loads (no CSS yet)**
+
+```bash
+open index.html
+```
+Expected: Page loads, sections visible in unstyled HTML. No JS errors in console.
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add index.html
+git commit -m "feat: rewrite index.html with full new section structure"
+```
+
+---
+
+## Task 3: Write css/custom.css — complete dark theme
+
+**Files:**
+- Modify: `css/custom.css` (full content)
+
+- [ ] **Step 1: Replace full contents of `css/custom.css`**
+
+```css
+/* css/custom.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-primary: #0a0e1a;
+  --bg-secondary: #0f2744;
+  --bg-navy: #0f1e38;
+  --gold: #f0c040;
+  --cyan: #00d4ff;
+  --blue-soft: #93c5fd;
+  --text-muted-dark: #94a3b8;
+  --card-bg: rgba(255,255,255,0.04);
+  --card-border: rgba(255,255,255,0.08);
+}
+
+/* ===== BASE ===== */
+body { background: var(--bg-primary); color: var(--text-muted-dark); font-family: 'Inter', 'Nunito', sans-serif; }
+h1,h2,h3,h4,h5,h6 { color: #fff; }
+.text-gold { color: var(--gold) !important; }
+.text-cyan { color: var(--cyan) !important; }
+.text-muted-light { color: var(--text-muted-dark); }
+.section { padding: 80px 0; }
+.dark-section { background: var(--bg-primary); }
+.navy-section { background: var(--bg-navy); }
+
+/* ===== PRELOADER ===== */
+#preloader { background: var(--bg-primary); }
+#status .spinner { color: var(--gold); }
+
+/* ===== NAVBAR ===== */
+.custom-nav { background: transparent; transition: background 0.3s, box-shadow 0.3s; }
+.custom-nav.stickyadd { background: rgba(10,14,26,0.97) !important; box-shadow: 0 2px 20px rgba(0,0,0,0.5); }
+.nav-logo { font-size: 22px; font-weight: 800; color: var(--gold); letter-spacing: 1px; }
+.custom-nav .nav-link { color: rgba(255,255,255,0.75) !important; font-size: 13px; font-weight: 500; letter-spacing: 0.5px; padding: 8px 14px !important; transition: color 0.2s; }
+.custom-nav .nav-link:hover, .custom-nav .nav-item.active .nav-link { color: var(--gold) !important; }
+.nav-toggler-icon { color: #fff; font-size: 24px; }
+
+/* ===== HERO ===== */
+.hero-section { position: relative; background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%); min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
+#particles-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.hero-content { position: relative; z-index: 1; width: 100%; }
+.available-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(240,192,64,0.12); border: 1px solid rgba(240,192,64,0.35); color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: 2px; padding: 6px 16px; border-radius: 20px; margin-bottom: 20px; }
+.pulse-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; animation: pulse-anim 1.5s infinite; flex-shrink: 0; }
+@keyframes pulse-anim { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.4; transform:scale(1.4); } }
+.hero-name { font-size: clamp(42px, 7vw, 72px); font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 16px; }
+.hero-role { font-size: clamp(18px, 3vw, 26px); font-weight: 500; color: var(--blue-soft); margin-bottom: 12px; min-height: 40px; }
+.hero-role .element { color: var(--cyan); font-weight: 700; }
+.hero-tagline { font-size: 15px; color: var(--text-muted-dark); margin-bottom: 24px; }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+.skill-tag { background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); color: var(--cyan); padding: 4px 12px; border-radius: 14px; font-size: 12px; font-weight: 600; }
+.btn-gold { background: var(--gold); color: #0a0e1a; font-weight: 700; padding: 10px 28px; border-radius: 6px; border: 2px solid var(--gold); transition: all 0.2s; font-size: 14px; }
+.btn-gold:hover { background: transparent; color: var(--gold); }
+.btn-outline-cyan { background: transparent; color: var(--cyan); border: 2px solid var(--cyan); font-weight: 700; padding: 10px 28px; border-radius: 6px; transition: all 0.2s; font-size: 14px; }
+.btn-outline-cyan:hover { background: var(--cyan); color: var(--bg-primary); }
+.avatar-circle { width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(135deg, var(--bg-secondary), var(--bg-navy)); border: 3px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 0 40px rgba(240,192,64,0.2); }
+.avatar-circle span { font-size: 64px; font-weight: 800; color: #fff; letter-spacing: -2px; }
+.scroll_down { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 2; }
+.scroll_down .scroll { font-size: 28px; animation: bounce 2s infinite; display: block; }
+@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+
+/* ===== SECTION HEADERS ===== */
+.section-header { margin-bottom: 10px; }
+.section-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; display: block; margin-bottom: 10px; }
+.section-header h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; color: #fff; margin-bottom: 16px; }
+.title-divider { width: 50px; height: 3px; background: var(--cyan); margin: 0 auto 20px; border-radius: 2px; }
+.section-subtitle { color: var(--text-muted-dark); font-size: 15px; max-width: 560px; margin: 0 auto; }
+
+/* ===== ABOUT ===== */
+.about-bio { font-size: 16px; line-height: 1.8; color: var(--text-muted-dark); }
+.stat-card { padding: 30px 20px; }
+.stat-value { font-size: 52px; font-weight: 800; line-height: 1; display: inline-block; }
+.stat-suffix { font-size: 28px; font-weight: 700; vertical-align: top; margin-top: 8px; display: inline-block; }
+.stat-label { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted-dark); margin-top: 8px; }
+.skill-bar-group { padding: 10px 0; }
+.skill-item { margin-bottom: 22px; }
+.skill-name { font-size: 13px; font-weight: 600; color: #fff; }
+.skill-pct { font-size: 13px; font-weight: 700; }
+.dark-progress { background: rgba(255,255,255,0.07); height: 6px; border-radius: 3px; }
+.cyan-bar { background: var(--cyan); }
+.gold-bar { background: var(--gold); }
+
+/* ===== AI EXPERTISE CARDS ===== */
+.ai-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 10px; padding: 28px 24px; margin-bottom: 24px; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; }
+.ai-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); border-color: rgba(0,212,255,0.3); }
+.ai-card-icon { font-size: 32px; margin-bottom: 14px; }
+.ai-card h5 { color: #fff; font-weight: 700; font-size: 16px; margin-bottom: 8px; }
+.ai-card p { font-size: 13px; color: var(--text-muted-dark); margin: 0; line-height: 1.6; }
+
+/* ===== FEATURED PROJECTS ===== */
+.project-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 30px; margin-bottom: 24px; transition: transform 0.25s, box-shadow 0.25s; }
+.project-card:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.4); }
+.flagship-card { border-color: rgba(240,192,64,0.25); background: rgba(240,192,64,0.03); }
+.flagship-card:hover { border-color: rgba(240,192,64,0.5); }
+.project-card-header { margin-bottom: 16px; }
+.project-tag { display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: var(--text-muted-dark); font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 4px; }
+.flagship-tag { background: rgba(240,192,64,0.15); border-color: rgba(240,192,64,0.4); color: var(--gold); }
+.project-tech-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.project-tech-tags span { background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.25); color: var(--cyan); font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 3px; }
+.project-title { color: #fff; font-weight: 700; font-size: 20px; margin-bottom: 10px; margin-top: 14px; }
+.project-desc { color: var(--text-muted-dark); font-size: 14px; line-height: 1.7; }
+.playbook-item { font-size: 13px; color: var(--text-muted-dark); padding: 5px 0; }
+.playbook-item .mdi { margin-right: 6px; }
+
+/* ===== SERVICES ===== */
+.service-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 10px; padding: 32px 24px; margin-bottom: 24px; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; }
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); border-color: rgba(240,192,64,0.3); }
+.service-icon { font-size: 36px; color: var(--gold); margin-bottom: 16px; }
+.service-card h5 { color: #fff; font-weight: 700; font-size: 16px; margin-bottom: 10px; }
+.service-card p { font-size: 13px; color: var(--text-muted-dark); margin: 0; line-height: 1.6; }
+
+/* ===== TIMELINE ===== */
+.timeline { position: relative; padding-left: 20px; }
+.timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(to bottom, var(--gold), var(--cyan), var(--gold)); opacity:0.3; border-radius:2px; }
+.timeline-item { position: relative; padding: 0 0 32px 24px; }
+.timeline-item::before { content:''; position:absolute; left:-5px; top:6px; width:12px; height:12px; border-radius:50%; background:var(--bg-primary); border:2px solid var(--gold); }
+.timeline-year { font-size: 12px; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+.timeline-item h5 { color: #fff; font-size: 16px; font-weight: 700; margin: 0 0 2px; }
+.timeline-role { font-size: 12px; color: var(--cyan); font-weight: 600; display: block; margin-bottom: 6px; }
+.timeline-item p { font-size: 13px; color: var(--text-muted-dark); margin: 0; line-height: 1.6; }
+
+/* ===== TESTIMONIALS ===== */
+.bg-client { background: var(--bg-secondary) !important; position:relative; }
+.bg-overlay { background: rgba(10,14,26,0.6); position:absolute; top:0;left:0;right:0;bottom:0; }
+.people_says { padding: 20px; }
+.people_icon img { width: 70px; height: 70px; border-radius: 50%; border: 2px solid var(--gold); object-fit: cover; margin: 0 auto; display: block; }
+.people_name { font-size: 16px !important; }
+.people_review { max-width: 600px; font-size: 14px !important; line-height: 1.7; font-style: italic; opacity: 0.9; }
+
+/* ===== CLIENT LOGOS ===== */
+.client-logo { max-height: 40px; width: auto; opacity: 0.65; filter: grayscale(100%) brightness(200%); transition: opacity 0.2s, filter 0.2s; }
+.client-logo:hover { opacity: 1; filter: none; }
+
+/* ===== ALL PROJECTS ===== */
+.mini-project-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 8px; padding: 22px; margin-bottom: 20px; transition: transform 0.2s, border-color 0.2s; }
+.mini-project-card:hover { transform: translateY(-3px); border-color: rgba(0,212,255,0.25); }
+.mini-project-card h6 { color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 8px; }
+.mini-project-card p { font-size: 12px; color: var(--text-muted-dark); margin-bottom: 10px; line-height: 1.6; }
+.mini-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+.mini-tags span { background: rgba(240,192,64,0.1); border: 1px solid rgba(240,192,64,0.2); color: var(--gold); font-size: 10px; padding: 1px 6px; border-radius: 3px; }
+.mini-tag-company { font-size: 10px; color: var(--text-muted-dark); letter-spacing: 0.5px; }
+
+/* ===== CONTACT ===== */
+.contact-item { padding: 30px 20px; }
+.contact-item .h2 { font-size: 36px; }
+.text-muted-light { color: var(--text-muted-dark); font-size: 13px; }
+.contact-link { color: #fff; font-size: 15px; font-weight: 600; transition: color 0.2s; word-break: break-all; }
+.contact-link:hover { color: var(--gold); }
+
+/* ===== FOOTER ===== */
+.dark-footer { background: #07090f; border-top: 1px solid rgba(255,255,255,0.06); }
+.text-muted-dark { color: var(--text-muted-dark); font-size: 13px; }
+.footer-social li { margin-left: 12px; }
+.footer-social a { color: var(--text-muted-dark); font-size: 18px; transition: color 0.2s; }
+.footer-social a:hover { color: var(--gold); }
+
+/* ===== BACK TO TOP ===== */
+.back_top { position:fixed; bottom:24px; right:24px; background:var(--gold); color:var(--bg-primary); width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; z-index:999; display:none; }
+.back_top:hover { background:#fff; color:var(--bg-primary); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero-name { font-size: 40px; }
+  .hero-role { font-size: 18px; }
+  .stat-value { font-size: 38px; }
+  .section { padding: 60px 0; }
+  .btn-gold, .btn-outline-cyan { padding: 8px 20px; font-size: 13px; }
+  .project-card { padding: 20px; }
+  .flagship-card .row { flex-direction: column; }
+}
+```
+
+- [ ] **Step 2: Open `index.html` in browser and verify dark theme is applied**
+
+```bash
+open index.html
+```
+Expected: Dark background (#0a0e1a), gold/cyan accents, all sections styled. Scroll through to verify layout.
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add css/custom.css
+git commit -m "feat: add complete dark theme CSS"
+```
+
+---
+
+## Task 4: Write js/particles.js — hero canvas animation
+
+**Files:**
+- Modify: `js/particles.js` (full implementation)
+
+- [ ] **Step 1: Replace contents of `js/particles.js`**
+
+```js
+(function () {
+  var canvas = document.getElementById('particles-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var particles = [];
+  var count = 80;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  function Particle() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.r = Math.random() * 1.5 + 0.3;
+    this.vx = (Math.random() - 0.5) * 0.3;
+    this.vy = (Math.random() - 0.5) * 0.3;
+    this.alpha = Math.random() * 0.5 + 0.1;
+    this.color = Math.random() > 0.6 ? '#f0c040' : '#00d4ff';
+  }
+
+  Particle.prototype.update = function () {
+    this.x += this.vx;
+    this.y += this.vy;
+    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+  };
+
+  Particle.prototype.draw = function () {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    ctx.fillStyle = this.color;
+    ctx.globalAlpha = this.alpha;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+  };
+
+  function drawLines() {
+    for (var i = 0; i < particles.length; i++) {
+      for (var j = i + 1; j < particles.length; j++) {
+        var dx = particles[i].x - particles[j].x;
+        var dy = particles[i].y - particles[j].y;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 120) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = 'rgba(0,212,255,' + (0.06 * (1 - dist / 120)) + ')';
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function init() {
+    resize();
+    particles = [];
+    for (var i = 0; i < count; i++) particles.push(new Particle());
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawLines();
+    for (var i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].draw();
+    }
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('resize', function () { resize(); });
+  init();
+  animate();
+})();
+```
+
+- [ ] **Step 2: Open `index.html` in browser and verify particles animate in hero**
+
+```bash
+open index.html
+```
+Expected: Floating gold and cyan dots with connecting lines visible in the hero background.
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add js/particles.js
+git commit -m "feat: add hero particle canvas animation"
+```
+
+---
+
+## Task 5: Update js/index.js — active nav + counter fix
+
+**Files:**
+- Modify: `js/index.js` (replace entire file)
+
+- [ ] **Step 1: Replace `js/index.js` with updated version**
+
+```js
+// Preloader
+$("#status").fadeOut();
+$("#preloader").delay(350).fadeOut("slow");
+$("body").delay(350).css({ overflow: "visible" });
+
+// Sticky navbar
+$(window).on("scroll", function () {
+  $(window).scrollTop() >= 50
+    ? $(".sticky").addClass("stickyadd")
+    : $(".sticky").removeClass("stickyadd");
+});
+
+// Smooth scroll for nav links
+$(".navbar-nav a, .scroll_down a").on("click", function (e) {
+  var t = $(this);
+  var target = t.attr("href");
+  if (target && target.charAt(0) === "#" && $(target).length) {
+    $("html, body").stop().animate({ scrollTop: $(target).offset().top - 60 }, 1200, "easeInOutExpo");
+    e.preventDefault();
+  }
+});
+
+// Active nav highlight on scroll
+var sections = $("section[id], footer[id]");
+$(window).on("scroll", function () {
+  var scrollPos = $(this).scrollTop() + 80;
+  sections.each(function () {
+    var id = $(this).attr("id");
+    var top = $(this).offset().top;
+    var bottom = top + $(this).outerHeight();
+    if (scrollPos >= top && scrollPos < bottom) {
+      $(".navbar-nav .nav-item").removeClass("active");
+      $(".navbar-nav a[href='#" + id + "']").closest(".nav-item").addClass("active");
+    }
+  });
+});
+
+// Counter animation
+var counterFired = false;
+$(window).on("scroll", function () {
+  if (counterFired) return;
+  var counterTop = $("#counter").length ? $("#counter").offset().top - window.innerHeight : Infinity;
+  if ($(window).scrollTop() > counterTop) {
+    $(".stat-value").each(function () {
+      var $el = $(this);
+      var target = parseInt($el.attr("data-count"), 10);
+      $({ val: 0 }).animate({ val: target }, {
+        duration: 2000,
+        easing: "swing",
+        step: function () { $el.text(Math.floor(this.val)); },
+        complete: function () { $el.text(target); }
+      });
+    });
+    counterFired = true;
+  }
+});
+
+// Owl Carousel
+$("#owl-demo").owlCarousel({
+  autoPlay: 7000,
+  stopOnHover: true,
+  navigation: false,
+  paginationSpeed: 1000,
+  singleItem: true,
+  autoHeight: true
+});
+
+// Back to top
+$(window).on("scroll", function () {
+  $(this).scrollTop() > 100 ? $(".back_top").fadeIn() : $(".back_top").fadeOut();
+});
+$(".back_top").click(function () {
+  $("html, body").animate({ scrollTop: 0 }, 1000);
+  return false;
+});
+```
+
+- [ ] **Step 2: Open `index.html` in browser and verify**
+
+```bash
+open index.html
+```
+Expected: Scroll down → preloader fades → navbar turns dark → active nav link highlights → scroll to about → counters animate (10, 30, 6, 5) → owl carousel auto-plays testimonials → back-to-top button appears after scrolling 100px.
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add js/index.js
+git commit -m "feat: update index.js for active nav, counter animation, smooth scroll"
+```
+
+---
+
+## Task 6: Final verification, polish, and .gitignore
+
+**Files:**
+- Modify: `.gitignore` (add .superpowers/)
+- Visual check across all sections
+
+- [ ] **Step 1: Add .superpowers to .gitignore**
+
+```bash
+echo ".superpowers/" >> .gitignore
+echo ".claude/" >> .gitignore
+```
+
+- [ ] **Step 2: Open site and walk through every section**
+
+```bash
+open index.html
+```
+
+Check each section in order:
+1. Hero — particle animation, typed text cycles through roles, avatar visible, "Available for Projects" badge pulses, Email Me + LinkedIn buttons present
+2. About — bio text readable, counters animate on scroll, skill bars show correct percentages
+3. AI Expertise — 6 cards with icons, hover effect lifts cards
+4. Featured Projects — flagship card gold border, tech tags cyan, 2 smaller cards below
+5. Services — 6 cards with gold icon, hover effect
+6. Experience — two-column timeline, gold/cyan year labels, correct company names
+7. Testimonials — owl carousel auto-plays, 4 testimonials
+8. Companies — 5 client logos with desaturated filter, hover reveals color
+9. All Projects — 6 mini cards visible
+10. Contact — email and LinkedIn links, location text
+11. Footer — 2026 copyright, 3 social icons, no KonixSoft branding
+12. Back to top button appears on scroll
+
+- [ ] **Step 3: Fix any visual issues found during check**
+
+Common things to fix inline: font sizing on mobile, card padding on small screens, navbar collapse on mobile.
+
+- [ ] **Step 4: Commit everything**
+
+```bash
+git add .gitignore
+git status
+git add -A
+git commit -m "feat: complete portfolio redesign — dark theme, AI expertise, maritime projects, interactive UI"
+```
+
+---
+
+## Spec Coverage Check
+
+| Spec Requirement | Task |
+|---|---|
+| Dark theme (navy/gold/cyan) | Task 3 |
+| Particle canvas hero | Task 4 |
+| Typed.js roles | Task 2 (HTML), Task 5 (JS) |
+| AOS scroll animations | Task 2 (data-aos attrs) |
+| Active nav highlight | Task 5 |
+| Animated stat counters | Task 5 |
+| Hover effects on cards | Task 3 |
+| VM avatar in hero | Task 2 |
+| "Available for Projects" badge | Task 2 |
+| AI Expertise section (6 cards) | Task 2 |
+| Maritime Intelligence Chat System card | Task 2 |
+| LangGraph, DeepAgent, Evals, Guardrails, HITL, Skills, Multi-Agent | Task 2 |
+| Featured Projects (flagship + 2) | Task 2 |
+| Services — real descriptions | Task 2 |
+| Updated experience timeline (all companies) | Task 2 |
+| Testimonials carousel | Task 2 |
+| All Projects section (last before contact) | Task 2 |
+| Contact — email + LinkedIn only | Task 2 |
+| Footer — no KonixSoft, 2026 copyright | Task 2 |
+| Updated SEO meta tags | Task 2 |
+| .gitignore for .superpowers | Task 6 |

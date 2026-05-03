@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vishnu Mishra — Resume</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #1a1a2e;
+      background: #fff;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 44px 52px;
+    }
+
+    /* ── HEADER ── */
+    .header { margin-bottom: 16px; }
+    .header h1 { font-size: 30px; font-weight: 700; color: #0d1b4b; letter-spacing: 0.3px; margin-bottom: 3px; }
+    .header .tagline { font-size: 14px; color: #c8920a; font-weight: 600; margin-bottom: 9px; }
+    .contact-row { display: flex; flex-wrap: wrap; gap: 5px 18px; font-size: 13px; color: #444; }
+    .contact-row a { color: #1a5cbf; text-decoration: none; }
+
+    hr.rule { border: none; border-top: 2px solid #0d1b4b; margin: 13px 0 15px; }
+    hr.thin  { border: none; border-top: 1px solid #e2e6f0; margin: 10px 0; }
+
+    /* ── SECTIONS ── */
+    .section { margin-bottom: 18px; }
+    .section-title {
+      font-size: 11px; font-weight: 700; letter-spacing: 1.8px;
+      text-transform: uppercase; color: #0d1b4b;
+      border-bottom: 1.5px solid #c8920a;
+      display: inline-block; padding-bottom: 3px; margin-bottom: 12px;
+    }
+
+    /* ── SUMMARY ── */
+    .summary p { font-size: 13.5px; color: #2a2a3e; line-height: 1.65; }
+
+    /* ── ENTRY ── */
+    .entry { margin-bottom: 12px; }
+    .entry-top { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 2px; }
+    .entry-title { font-size: 14.5px; font-weight: 700; color: #0d1b4b; }
+    .entry-date  { font-size: 12.5px; color: #666; white-space: nowrap; }
+    .entry-sub   { font-size: 13px; color: #c8920a; font-weight: 600; margin-bottom: 5px; }
+    .entry-sub span { font-weight: 400; color: #777; }
+
+    ul.bullets { list-style: none; padding: 0; margin: 0; }
+    ul.bullets li {
+      font-size: 13px; color: #2a2a3e; line-height: 1.55;
+      padding-left: 13px; position: relative; margin-bottom: 4px;
+    }
+    ul.bullets li::before { content: '▸'; position: absolute; left: 0; color: #c8920a; font-size: 10px; top: 3px; }
+    ul.bullets li strong { color: #0d1b4b; }
+
+    .tech { font-size: 12px; color: #555; margin-top: 5px; }
+    .tech b { color: #0d1b4b; }
+
+    /* ── SKILLS ── */
+    .skills-grid { display: grid; grid-template-columns: 130px 1fr; gap: 6px 14px; font-size: 13px; }
+    .sk { font-weight: 700; color: #0d1b4b; }
+    .sv { color: #2a2a3e; }
+
+    /* ── TWO-COL (certs + awards) ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+    .two-col .section-title { margin-bottom: 8px; }
+    .two-col ul { list-style: none; padding: 0; font-size: 13px; color: #2a2a3e; }
+    .two-col ul li { padding-left: 13px; position: relative; margin-bottom: 4px; }
+    .two-col ul li::before { content: '▸'; position: absolute; left: 0; color: #c8920a; font-size: 10px; top: 3px; }
+
+    /* ── EDUCATION ── */
+    .edu { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 3px; margin-bottom: 7px; }
+    .edu-deg  { font-size: 13.5px; font-weight: 700; color: #0d1b4b; }
+    .edu-inst { font-size: 13px; color: #c8920a; font-weight: 600; }
+    .edu-yr   { font-size: 12.5px; color: #666; white-space: nowrap; }
+
+    /* ── PRINT ── */
+    @media print {
+      body { padding: 0; font-size: 13.5px; line-height: 1.6; }
+      .header h1 { font-size: 24px; }
+      .header .tagline { font-size: 13px; margin-bottom: 8px; }
+      .contact-row { font-size: 12px; gap: 5px 16px; }
+      hr.rule { margin: 10px 0 13px; }
+      hr.thin  { margin: 9px 0; }
+      .section { margin-bottom: 15px; }
+      .section-title { font-size: 11px; letter-spacing: 1.5px; margin-bottom: 10px; }
+      .summary p { font-size: 12.5px; }
+      .entry { margin-bottom: 11px; }
+      .entry-title { font-size: 14px; }
+      .entry-sub { font-size: 12.5px; margin-bottom: 5px; }
+      .entry-date { font-size: 12px; }
+      ul.bullets li { font-size: 12.5px; line-height: 1.55; margin-bottom: 3px; }
+      .tech { font-size: 11.5px; margin-top: 4px; }
+      .skills-grid { font-size: 12.5px; gap: 6px 12px; grid-template-columns: 120px 1fr; }
+      .two-col ul { font-size: 12.5px; }
+      .edu-deg { font-size: 13px; }
+      .edu-inst { font-size: 12.5px; }
+      .edu-yr { font-size: 12px; }
+      a { color: #1a5cbf !important; text-decoration: none !important; }
+    }
+
+    @page { size: A4; margin: 8mm 12mm; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>Vishnu Mishra</h1>
+  <div class="tagline">Full-Stack Lead Developer &amp; AI Architect &nbsp;·&nbsp; 10+ Years</div>
+  <div class="contact-row">
+    <span>Bengaluru, India</span>
+    <span>+91 8553191917</span>
+    <a href="mailto:cybercognizant@gmail.com">cybercognizant@gmail.com</a>
+    <a href="https://linkedin.com/in/cyberbaba">linkedin.com/in/cyberbaba</a>
+    <a href="https://github.com/vishnumishra">github.com/vishnumishra</a>
+    <a href="https://vishnumishra.com">vishnumishra.com</a>
+  </div>
+</div>
+
+<hr class="rule" />
+
+<!-- SUMMARY -->
+<div class="section summary">
+  <div class="section-title">Summary</div>
+  <p>Full-Stack Lead Developer and AI Architect with 10+ years building scalable distributed systems and AI-driven products. Currently at <strong>Windward</strong> — the global leader in maritime predictive intelligence — designing multi-agent AI systems with LangGraph and DeepAgent. Proven leader across maritime, insurtech, fintech, and gaming, shipping products that serve millions of users. Open to senior IC and technical leadership roles.</p>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section">
+  <div class="section-title">Experience</div>
+
+  <!-- Windward -->
+  <div class="entry">
+    <div class="entry-top">
+      <span class="entry-title">Full-Stack Lead Developer</span>
+      <span class="entry-date">Jul 2023 – Present &nbsp;·&nbsp; 2 yrs+</span>
+    </div>
+    <div class="entry-sub">Windward &nbsp;<span>· Full-time · Remote (London, UK)</span></div>
+    <ul class="bullets">
+      <li>Architected the <strong>Maritime Intelligence Chat System</strong> — multi-agent AI pipeline using LangGraph, DeepAgent, and custom LLM orchestration.</li>
+      <li>Built and scaled high-impact microservices handling global maritime data loads for enterprise clients worldwide.</li>
+      <li>Drove AI and big data integration to deliver predictive intelligence solutions redefining maritime operations.</li>
+      <li><strong>Won 1st place</strong> at Windward Hackathon 2025 — shipped end-to-end automated feature-building app using Claude CLI, MCP, n8n, and Jira.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> Node.js, TypeScript, Python, LangGraph, Langfuse, DeepAgent, AWS, PostgreSQL, Elasticsearch</div>
+  </div>
+
+  <hr class="thin" />
+
+  <!-- Roadzen -->
+  <div class="entry">
+    <div class="entry-top">
+      <span class="entry-title">Technical Lead</span>
+      <span class="entry-date">Jul 2022 – Jul 2023 &nbsp;·&nbsp; 1 yr 1 mo</span>
+    </div>
+    <div class="entry-sub">Roadzen &nbsp;<span>· Full-time</span></div>
+    <ul class="bullets">
+      <li>Led a team of 6 to build an AI-powered InsurTech platform — delivered <strong>AI risk scoring (RSA)</strong>, video-based damage detection, and rapid claim settlement.</li>
+      <li>Architected scalable backend serving multiple insurance brokers; owned sprint planning, code reviews, and technical roadmap.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> Node.js, Python, React, AWS, AI/ML pipelines, Microservices</div>
+  </div>
+
+  <hr class="thin" />
+
+  <!-- FreeUp -->
+  <div class="entry">
+    <div class="entry-top">
+      <span class="entry-title">Lead Software Engineer</span>
+      <span class="entry-date">Nov 2017 – Jul 2022 &nbsp;·&nbsp; 4 yrs 9 mos</span>
+    </div>
+    <div class="entry-sub">FreeUp &nbsp;<span>· Full-time · Remote (Florida, US)</span></div>
+    <ul class="bullets">
+      <li>Led engineering for a US-based freelance marketplace for ~5 years — owned high-level and low-level microservices design, feature delivery, and platform scalability.</li>
+      <li>Introduced event-driven architecture with <strong>Apache Kafka and RabbitMQ</strong>, improving throughput and fault tolerance at scale.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> Node.js, React.js, Angular, MongoDB, Kafka, RabbitMQ, Microservices</div>
+  </div>
+
+  <hr class="thin" />
+
+  <!-- Pocket Aces -->
+  <div class="entry">
+    <div class="entry-top">
+      <span class="entry-title">Backend Developer &nbsp;/&nbsp; SDE-3</span>
+      <span class="entry-date">Jan 2020 – Dec 2020 &nbsp;·&nbsp; 1 yr</span>
+    </div>
+    <div class="entry-sub">Pocket Aces — Loco &nbsp;<span>· Full-time · Bengaluru</span></div>
+    <ul class="bullets">
+      <li>Built the personalized homefeed API for Loco game streaming — served <strong>30M+ users</strong> with sub-100ms latency using DynamoDB-backed recipes and multi-level Redis caching.</li>
+      <li>Used server-driven UI design to enable real-time user flow changes without app releases.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> Node.js, DynamoDB, Redis, Elasticsearch, Server-Driven UI</div>
+  </div>
+
+  <hr class="thin" />
+
+  <!-- EQTribe -->
+  <div class="entry">
+    <div class="entry-top">
+      <span class="entry-title">Full-Stack Developer</span>
+      <span class="entry-date">Mar 2016 – Nov 2017 &nbsp;·&nbsp; 1 yr 9 mos</span>
+    </div>
+    <div class="entry-sub">EQTribe &nbsp;<span>· Full-time · Bengaluru</span></div>
+    <ul class="bullets">
+      <li>Built core product features end-to-end (frontend, backend, DevOps) using microservices, WebRTC, gRPC, and serverless — delivered RunMyFPO, KBITS, and RunMyOffice.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> Node.js, Ionic, WebRTC, gRPC, Serverless</div>
+  </div>
+
+  <hr class="thin" />
+
+  <!-- ThoughtWorks -->
+  <div class="entry">
+    <div class="entry-top">
+      <span class="entry-title">Application Developer</span>
+      <span class="entry-date">Jul 2014 – Apr 2015 &nbsp;·&nbsp; 10 mos</span>
+    </div>
+    <div class="entry-sub">ThoughtWorks &nbsp;<span>· Full-time · Bengaluru</span></div>
+    <ul class="bullets">
+      <li>Delivered enterprise software projects using Agile/XP, TDD, pair programming, and CI — built automated testing and debugging modules for enterprise clients.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> JavaScript, Agile/XP, TDD, CI</div>
+  </div>
+
+  <hr class="thin" />
+
+  <!-- TECSOL -->
+  <div class="entry">
+    <div class="entry-top">
+      <span class="entry-title">Node.js Developer</span>
+      <span class="entry-date">Jun 2015 – Mar 2016 &nbsp;·&nbsp; 10 mos</span>
+    </div>
+    <div class="entry-sub">TECSOL Software &nbsp;<span>· Full-time · Bengaluru</span></div>
+    <ul class="bullets">
+      <li>Built secure auth (ACL), RESTful APIs for Android and web, coupon management system, and integrated GCM/APN push notifications and Nodemailer.</li>
+    </ul>
+    <div class="tech"><b>Tech:</b> Node.js, Express.js, PostgreSQL, MySQL, MongoDB, Redis</div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="section">
+  <div class="section-title">Technical Skills</div>
+  <div class="skills-grid">
+    <span class="sk">Languages</span>      <span class="sv">JavaScript (ES2022+), TypeScript, Python, Solidity</span>
+    <span class="sk">AI / LLM</span>       <span class="sv">LangGraph, Langfuse, DeepAgent, Multi-Agent Systems, LLM Integration, Bedrock, MCP</span>
+    <span class="sk">Frontend</span>       <span class="sv">React.js, Next.js, Angular, React Native, Ionic</span>
+    <span class="sk">Backend</span>        <span class="sv">Node.js, Nest.js, Express.js, GraphQL, REST, gRPC</span>
+    <span class="sk">Cloud &amp; DevOps</span> <span class="sv">AWS (Lambda, EC2, S3, DynamoDB, SQS), Docker, Serverless, n8n</span>
+    <span class="sk">Databases</span>      <span class="sv">MongoDB, PostgreSQL, MySQL, DynamoDB, Elasticsearch, Redis</span>
+    <span class="sk">Architecture</span>   <span class="sv">Microservices, Event-Driven, Serverless, WebRTC, System Design</span>
+    <span class="sk">Messaging</span>      <span class="sv">Apache Kafka, RabbitMQ, AWS SQS</span>
+  </div>
+</div>
+
+<!-- CERTS + AWARDS -->
+<div class="section two-col">
+  <div>
+    <div class="section-title">Certifications</div>
+    <ul>
+      <li>Mastering Financials</li>
+      <li>MLBLR (Machine Learning Bengaluru)</li>
+    </ul>
+  </div>
+  <div>
+    <div class="section-title">Honors &amp; Awards</div>
+    <ul>
+      <li><strong>Windward Hackathon 2025 — 1st Place</strong></li>
+      <li>Peerbuds Hackathon — Winner</li>
+      <li>Unicoin Cryptothon — Winner</li>
+      <li>Code Husk by Venturesity — Prize Winner</li>
+    </ul>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<div class="section">
+  <div class="section-title">Education</div>
+  <div class="edu">
+    <div>
+      <div class="edu-deg">BCA — Computer Software Engineering</div>
+      <div class="edu-inst">University of Madras</div>
+    </div>
+    <div class="edu-yr">2014 – 2017</div>
+  </div>
+  <div class="edu">
+    <div>
+      <div class="edu-deg">Diploma — Computer Science</div>
+      <div class="edu-inst">Guru Nanak Dev Polytechnic</div>
+    </div>
+    <div class="edu-yr">2011 – 2014</div>
+  </div>
+</div>
+
+</body>
+</html>
